@@ -1,0 +1,13 @@
+#!/bin/sh
+dbName=$1
+if [ x$1 = x ] ; then
+    dbName=navaid
+fi
+
+pg_dump -c -U navaid $dbName -t areaids -t areaids_areaid_seq \
+    -t comm_freqs  -t country_extents -t fix \
+    -t dafif_country_codes \
+    -t id_mapping -t map_categories -t runways \
+    -t state_country_extents \
+    -t state_prov_lookup -t type_categories \
+    -t waypoint -t waypoint_internalid_seq  > $dbName.dump

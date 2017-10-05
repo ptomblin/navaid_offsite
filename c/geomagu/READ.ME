@@ -1,0 +1,144 @@
+*******************************************************************************
+******NOTE:  THE EPOCH DATE FOR THE DATA CONTAINED WITHIN THE WMM_95.DAT*******
+******                          IS 2000.0                               *******
+*******************************************************************************
+
+												********************************
+												*                            															  *
+												*                   															           *
+												*    		  GEOMAG USER'S MANUAL   				  *
+												*                            															  *
+												*                    															          *
+												********************************                                                               Requests for the magnet model, data, charts or other                        magnetic information should be addressed to:                            National Geophysical Data Center                            World Data Center - A (Geomagnetism)                            NOAA  EGC  1                            325 Broadway                            Boulder  CO  80303                           (303)497-6478  Fax(303)497-6513											Military Activites: NGDC Product Code:  889-D25-DoD                                       * * * * * * * * * * * * 
+
+
+						This routine was written using ANSI C keywords.  It compiled 
+			and executed with no errors under both Borland's Turbo C 2.01 and 
+			Borland's Turbo C++. 
+     GENERAL INFORMATION
+        The World Magnetic Models are valid for
+			5 years from the epoch date.
+
+						WMM-95 model and software are distributed by the National
+			Geophysical Data Center at Boulder Colorado.  A user list is
+			maintained, and registered users will be informed of any product
+			updates.
+
+						It is very important to note that a degree and order 12 model,  
+			such as WMM-95, describes only the long-wavelength spatial magnetic
+			fluctuations due to the Earth's core.  Intermediate and short-
+			wavelength fluctuations, which originate in the Earth's mantle and
+			crust, are not included.  Consequently, isolated angular errors at
+			various positions on the surface (primarily over land, in continental
+			margins, and over oceanic seamounts, ridges and trenches) of several                     
+			degrees may be expected.  Also not included in the model are substan- 
+			tial fluctuations of the geomagnetic field which occur during magnetic
+			storms.
+
+						The  accuracy of a world magnetic model depends on the geomag-
+			netic latitude.  Errors are least at the equator and greatest at the
+			magnetic poles.  Globally and in ocean areas, the root-mean-square
+			(rms) declination and inclination errors are estimated to be 1 degree
+			or less over the 5-year life of the model.  The rms errors in total
+			intensity, horizontal intensity, and the X, Y, and Z components are
+			estimated to be 200 nanoTeslas (nT) or less.  Any questions concerning			the use of this product in military systems or other magnetic data 
+			requirements should be directed to:  the address above
+
+												
+       INPUTS AND OUTPUTS
+
+
+							GEOMAG computes the main components of the geomagnetic
+			field and their annual change.  The program is designed to be used
+			in demand mode.  The input parameters and valid entries are:
+
+											Latitude  -   -90.00 to  +90.00 degrees
+											Longitude -  -180.00 to +180.00 degrees
+											Altitude  -  Sea level to 1,000,000 meters
+											Date      -  1995.000 to 2000.000
+
+								Example:  June = 6th Mth divided by 12 Mth's/yr = .5 (1998.5)
+																Sept = 9					divided by 12               = .75 (1998.75)
+																or
+																April 20th = Julian Date divided by 365
+																									=110 divided by 365 = .3013 (1998.3013)
+																June  11th = 162 divided by 365 = .4438 (1998.4438)
+
+						The altitude is referenced to the World Geodetic System
+			1984 (WGS 84) ellipsoid.  The input screen is shown in figure 1.
+
+							Figures 2 shows the program's output.  The seven computed 
+			magnetic values displayed are:
+
+										TI  -  Total Intensity of the geomagnetic field
+										HI  -  Horizontal Intensity of the geomagnetic field
+										X   -  North Component of the geomagnetic field
+										Y   -  East Component of the geomagnetic field
+										Z   -  Vertical Component of the geomagnetic field
+									DIP -  Geomagnetic Inclination
+									DEC -  Geomagnetic Declination (Magnetic Variation)
+
+						Annual change in each of these magnetic components is also
+			displayed.  The annual change is computed by subtracting the main
+			field values for the input date from main field values for exactly
+			one year later.  The output units are displayed using the abbrevia-
+			tions nT (nanoTesla), deg (degrees) and min (minutes).
+
+						As geomagnetic model data is only reliable for five years
+			from the epoch date of the model, computing data for a date that
+			exceeds the life of the model may produce inaccurate results.
+			Therefore, when a date is entered that exceeds five years from the
+			epoch date, a warning is printed on the screen.  Figure 3 displays
+			this warning and a processing continuation question.
+
+				--------------------------------------------------------------------
+
+				ENTER LATITUDE IN DECIMAL DEGREES (+25.0)
+
+				ENTER LONGITUDE IN DECIMAL DEGREES (-100.0)
+
+				ENTER ALTITUDE IN METERS
+
+				ENTER TIME IN DECIMAL YEARS
+
+                                    Figure 1
+				--------------------------------------------------------------------
+
+				LATITUDE:   = 25.00   DEG
+				LONGITUDE:  = -100.00 DEG
+
+				ALTITUDE:   = 0.00  METERS
+				DATE:       = 1995.5
+
+										OUTPUT
+										-------
+		MAIN FIELD COMPONENTS				ANNUAL CHANGE
+		-----------------------			-------------
+
+       TI          = 46109  nT                       TI  = -58    nT/YR
+       HI          = 27284  nT                       HI  = -51    nT/YR
+       X           = 27055  nT                       X   = -48    nT/YR
+       Y           = 3528   nT                  	     Y   = -27    nT/YR
+       Z           = 37170  nT                       Z   = -34    nT/YR
+       DEC         = 7.43   DEG                      DEC = -2.57  MIN/YR
+       DIP         = 53.72  DEG                      DIP = 1.57   MIN/YR
+
+
+       DO YOU NEED MORE POINT DATA? (y or n)
+
+                                    Figure 2
+
+		--------------------------------------------------------------------
+
+
+       WARNING -  TIME EXTENDS BEYOND MODEL'S 5-YEAR LIFE SPAN
+       CONTACT NATIONAL GEOPHYSICAL DATA CENTER FOR          PRODUCT UPDATES:
+                 
+
+       EPOCH  = 1995.000
+       TIME   = 2000.100
+       Do you wish to continue (y or n) ?
+
+                                    Figure 3
+
+		--------------------------------------------------------------------

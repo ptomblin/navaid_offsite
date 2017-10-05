@@ -1,0 +1,59 @@
+
+
+          WMM-90 TEST VALUES FOR USE IN VALIDATING GEOMAG OPERATION
+         -----------------------------------------------------------
+
+    Input parameters:
+
+       Latitude  (LAT)  = degrees decimal (+ for N LAT;  - for S LAT)
+       Longitude (LONG) = degrees decimal (+ for E LONG; - for W LONG)
+       Altitude  (ALT)  = meters
+       Date             = year (decimal)
+
+    Output parameters:
+
+       Total Intensity (TI)      = nanoteslas
+       Horizontal Intensity (HI) = nanoteslas
+       North    Component of the Geomagnetic Field (X) = nanoteslas
+       East     Component of the Geomagnetic Field (Y) = nanoteslas
+       Vertical Component of the Geomagnetic Field (Z) = nanoteslas
+       Inclination (DIP) = degrees decimal (+ for N DIP; - for S DIP)
+       Declination (DEC) = degrees decimal (+ for E DEC; - for W DEC)
+       Annual Change     = (Value at (Date + 1 year)) - (Value at Date)
+
+
+    Input                           Output                       Annual Change
+    -----                           ------                       -------------
+
+    Latitude:      80.000 deg N     TI  =   54886  nT               -6  nT
+    Longitude:     24.000 deg E     HI  =    6807  nT              -20  nT
+    Altitude:           0 m         X   =    6749  nT              -22  nT
+    Date:         1990.00           Y   =     890  nT               11  nT
+                                    Z   =   54462  nT               -3  nT
+                                    DIP =    82.9  deg N             1  min N
+                                    DEC =     7.5  deg E             7  min E
+
+    Latitude:      16.000 deg S     TI  =   32523  nT              -40  nT
+    Longitude:    125.000 deg W     HI  =   30076  nT              -19  nT
+    Altitude:           0 m         X   =   29465  nT              -26  nT
+    Date:         1990.00           Y   =    6030  nT               34  nT
+                                    Z   =  -12378  nT               58  nT
+                                    DIP =    22.4  deg S             5  min N
+                                    DEC =    11.6  deg E             4  min E
+
+    Latitude:      64.000 deg S     TI  =   66852  nT              -16  nT
+    Longitude:    130.000 deg E     HI  =    2581  nT               -1  nT
+    Altitude:           0 m         X   =      37  nT              -40  nT
+    Date:         1990.00           Y   =   -2581  nT                1  nT
+                                    Z   =  -66802  nT               16  nT
+                                    DIP =    87.8  deg S             0  min S
+                                    DEC =    89.2  deg W            53  min W
+
+    Latitude:      10.000 deg N     TI  =   36165  nT              -39  nT
+    Longitude:    104.000 deg W     HI  =   30668  nT              -69  nT
+    Altitude:       10000 m         X   =   30348  nT              -67  nT
+    Date:         1990.00           Y   =    4418  nT              -14  nT
+                                    Z   =   19167  nT               36  nT
+                                    DIP =    32.0  deg N             6  min N
+                                    DEC =     8.3  deg E             0  min W
+

@@ -1,0 +1,29 @@
+#!/bin/sh
+for i in areaids waypoint comm_freqs runways fix ; do
+    mv after.$i before.$i
+done
+
+dbName=$1
+if [ x$1 = x ] ; then
+    dbName=navaid
+fi
+
+psql -U navaid $dbName << EOF > after.areaids
+select * from areaids order by areaid;
+EOF
+
+psql -U navaid $dbName <<EOF > after.waypoint
+select * from waypoint order by id, internalid;
+EOF
+
+psql -U navaid $dbName <<EOF > after.comm_freqs
+select * from comm_freqs order by internalid, comm_type, frequency, comm_name;
+EOF
+
+psql -U navaid $dbName <<EOF > after.runways
+select * from runways order by internalid, runway_designation, surface;
+EOF
+
+psql -U navaid $dbName <<EOF > after.fix
+select * from fix order by internalid,navaid_type, navaid;
+EOF
