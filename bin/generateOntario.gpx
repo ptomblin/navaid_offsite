@@ -1,1 +1,0 @@
-./CreateGPX.pl --province ON --note navfrequency --note runways --note airfrequencymil --note airfrequencynonmil --note tpa --note fixinfo 

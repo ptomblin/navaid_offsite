@@ -768,6 +768,7 @@ my %oceanLookup  =
  "LINCOLN SEA" 	        =>	"CA",
  "EAST SIBERIAN SEA" 	=>	"RS",
  "ENGLISH CHANNEL" 	=>	"UK",
+ "GULF OF PANAMA" 	=>	"PM",
 );
 
 my $lastCall;
